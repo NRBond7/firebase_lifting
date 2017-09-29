@@ -16,13 +16,18 @@
     <script defer src="/__/firebase/init.js"></script>
 
     <script src="https://www.gstatic.com/firebasejs/4.4.0/firebase.js"></script>
-    <script src="main.js"></script>
-    <script src="authenticate.js"></script>
+
+    <script data-main="js/dateformat.js" src="js/require.js"></script>
+
+    <script src="js/main.js"></script>
+    <script src="js/authenticate.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="style.css">
   </head>
   <body>
-    <select name="user" id="select_user" onChange="onUserSelected()"/>
+    <div class="dropdown"><select name="user" id="select_user" onChange="onUserSelected()"></select></div>
 
-    <select name="day" id="select_day" onChange="onDaySelected()"/>
+    <div class="dropdown"><select name="day" id="select_day" onChange="onDaySelected()" ></select></div>
     
     <script>
       initFirebase();
