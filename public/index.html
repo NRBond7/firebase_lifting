@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Welcome to Firebase Hosting</title>
+    <title>Powerbuilding Program</title>
 
     <!-- update the version number as needed -->
     <script defer src="/__/firebase/4.4.0/firebase-app.js"></script>
@@ -15,18 +15,20 @@
     <!-- initialize the SDK after all desired features are loaded -->
     <script defer src="/__/firebase/init.js"></script>
 
+    <script src="https://www.gstatic.com/firebasejs/4.4.0/firebase.js"></script>
     <script src="main.js"></script>
+    <script src="authenticate.js"></script>
   </head>
   <body>
+    <select name="user" id="select_user" onChange="onUserSelected()"/>
 
-  <p id="test">Test</p>
-
-  <script src="https://www.gstatic.com/firebasejs/4.4.0/firebase.js"></script>
-  <script>
-    initFirebase();
-
-    testFirebase();
-  </script>
+    <select name="day" id="select_day" onChange="onDaySelected()"/>
+    
+    <script>
+      initFirebase();
+      initUI();
+      authenticate();
+    </script>
 
   </body>
 </html>

@@ -10,11 +10,56 @@ function initFirebase() {
     firebase.initializeApp(config);
 }
 
-function testFirebase() {
-	const preObject = document.getElementById('test')
-    const noah = firebase.database().ref("intensities");
+function onDaySelected() {
+  const dropdown = document.getElementById('select_day');
+  alert(dropdown.options[dropdown.selectedIndex].text);
+}
 
-    noah.once('value').then(snap => {
-      preObject.innerText = JSON.stringify(snap.val(), null, 3);
-    });
+function initUI() {
+  // Make call to get info
+  var database = firebase.database();
+  var user = firebase.auth().currentUser;
+
+  populateUserDropdown();
+}
+
+function populateLiftUI() {
+  // Show and Populate day dropdown
+  var liftLog = database.ref("lift_log");
+  var dropdown = document.getElementById('select_day');
+
+
+  //Populate Workout UI
+}
+
+function populateUserDropdown() {
+  var users = firebase.database().ref('/users');
+  var dropdown = document.getElementById('select_user');
+  
+  users.on('value', snap => {
+    snap.forEach(childSnapshot => {
+      var childKey = childSnapshot.key;
+      var childData = childSnapshot.val();
+      var dropdownOption = document.createElement('option');
+
+      dropdownOption.value = childKey;
+      dropdownOption.textContent = childSnapshot.child("name").val();
+      dropdown.add(dropdownOption, 0);
+    })
+
+    if (firebase.auth().currentUser) {
+      selectUserFromDropdown(firebase.auth().currentUser);
+    }
+  });
+}
+
+function selectUserFromDropdown(user) {
+  var dropdown = document.getElementById('select_user');
+  for (x = 0; x < dropdown.size; x++) {
+    var currentOption = dropdown.options[x];
+    if (user.displayName == currentOption.val) {
+      dropdown.value = user.displayName;
+      break;
+    }
+  }
 }
