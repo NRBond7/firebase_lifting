@@ -1,28 +1,36 @@
-[debug] [2017-09-29T20:53:18.178Z] ----------------------------------------------------------------------
-[debug] [2017-09-29T20:53:18.180Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\chaos\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve
-[debug] [2017-09-29T20:53:18.181Z] CLI Version:   3.12.0
-[debug] [2017-09-29T20:53:18.181Z] Platform:      win32
-[debug] [2017-09-29T20:53:18.181Z] Node Version:  v6.11.3
-[debug] [2017-09-29T20:53:18.181Z] Time:          Fri Sep 29 2017 16:53:18 GMT-0400 (Eastern Daylight Time)
-[debug] [2017-09-29T20:53:18.181Z] ----------------------------------------------------------------------
+[debug] [2017-09-30T16:14:16.219Z] ----------------------------------------------------------------------
+[debug] [2017-09-30T16:14:16.221Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\chaos\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve
+[debug] [2017-09-30T16:14:16.221Z] CLI Version:   3.12.0
+[debug] [2017-09-30T16:14:16.221Z] Platform:      win32
+[debug] [2017-09-30T16:14:16.221Z] Node Version:  v6.11.3
+[debug] [2017-09-30T16:14:16.222Z] Time:          Sat Sep 30 2017 12:14:16 GMT-0400 (Eastern Daylight Time)
+[debug] [2017-09-30T16:14:16.222Z] ----------------------------------------------------------------------
 [debug] 
-[debug] [2017-09-29T20:53:18.190Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
-[debug] [2017-09-29T20:53:18.190Z] > authorizing via signed-in user
-[debug] [2017-09-29T20:53:18.192Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/lifting-test-1  
- Fri Sep 29 2017 16:53:18 GMT-0400 (Eastern Daylight Time)
-[debug] [2017-09-29T20:53:18.645Z] <<< HTTP RESPONSE 200
-[debug] [2017-09-29T20:53:18.648Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/lifting-test-1/tokens  
- Fri Sep 29 2017 16:53:18 GMT-0400 (Eastern Daylight Time)
-[debug] [2017-09-29T20:53:19.010Z] <<< HTTP RESPONSE 200
+[debug] [2017-09-30T16:14:16.237Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2017-09-30T16:14:16.237Z] > authorizing via signed-in user
+[debug] [2017-09-30T16:14:16.238Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2017-09-30T16:14:16.238Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token { refresh_token: '1/C_resQ_K1mTGOxiCCYa2WtXlYXlS8BJq6qrVxT-tFwo',
+  client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
+  client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
+  grant_type: 'refresh_token',
+  scope: 'email https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
+ Sat Sep 30 2017 12:14:16 GMT-0400 (Eastern Daylight Time)
+[debug] [2017-09-30T16:14:16.458Z] <<< HTTP RESPONSE 200
+[debug] [2017-09-30T16:14:16.461Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/lifting-test-1  
+ Sat Sep 30 2017 12:14:16 GMT-0400 (Eastern Daylight Time)
+[debug] [2017-09-30T16:14:16.773Z] <<< HTTP RESPONSE 200
+[debug] [2017-09-30T16:14:16.775Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/lifting-test-1/tokens  
+ Sat Sep 30 2017 12:14:16 GMT-0400 (Eastern Daylight Time)
+[debug] [2017-09-30T16:14:17.254Z] <<< HTTP RESPONSE 200
 [info] 
 [info] === Serving from 'C:\Users\chaos\Desktop\Firebase\firebase_lifting'...
 [info] 
-[debug] [2017-09-29T20:53:19.028Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/lifting-test-1  
- Fri Sep 29 2017 16:53:19 GMT-0400 (Eastern Daylight Time)
-[debug] [2017-09-29T20:53:19.388Z] <<< HTTP RESPONSE 200
-[debug] [2017-09-29T20:53:19.389Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/669558100073/clients/_:getWebAppConfig  
- Fri Sep 29 2017 16:53:19 GMT-0400 (Eastern Daylight Time)
-[debug] [2017-09-29T20:53:19.688Z] <<< HTTP RESPONSE 200
+[debug] [2017-09-30T16:14:17.267Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/lifting-test-1  
+ Sat Sep 30 2017 12:14:17 GMT-0400 (Eastern Daylight Time)
+[debug] [2017-09-30T16:14:17.548Z] <<< HTTP RESPONSE 200
+[debug] [2017-09-30T16:14:17.549Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/669558100073/clients/_:getWebAppConfig  
+ Sat Sep 30 2017 12:14:17 GMT-0400 (Eastern Daylight Time)
+[debug] [2017-09-30T16:14:17.868Z] <<< HTTP RESPONSE 200
 [info] i  hosting: Serving hosting files from: public
 [info] +  hosting: Local server: http://localhost:5000
 

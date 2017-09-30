@@ -10,7 +10,6 @@ function initFirebase() {
     firebase.initializeApp(config);
 }
 
-
 function initUI() {
   populateUserDropdown();
 }
@@ -30,22 +29,8 @@ function populateUserDropdown() {
       dropdown.add(dropdownOption, 0);
     })
 
-    if (firebase.auth().currentUser) {
-      selectUserFromDropdown(firebase.auth().currentUser);
-      populateDayDropdown();
-    }
+    dropdown.value = dropdown.options[0].value;
   });
-}
-
-function selectUserFromDropdown(user) {
-  var dropdown = document.getElementById('select_user');
-  for (x = 0; x < dropdown.size; x++) {
-    var currentOption = dropdown.options[x];
-    if (user.displayName == currentOption.val) {
-      dropdown.value = user.displayName;
-      break;
-    }
-  }
 }
 
 function onUserSelected() {
@@ -90,15 +75,16 @@ function onDaySelected() {
 }
 
 function generateNextLiftDay(lastLift) {
+  //todo: use strings from lift table
   if (lastLift) {
     switch (lastLift) {
       case "deadlift":
-        return {liftType : "bench_press", liftName : "Deadlift"};
-      case "bench_press":
+        return {liftType : "overhead_press", liftName : "OHP"};
+      case "overhead_press":
         return {liftType : "back_squat", liftName : "Back Squat"};
       case "back_squat":
-        return {liftType : "overhead_press", liftName : "Overhead Press"};
-      case "overhead_press":
+        return {liftType : "bench_press", liftName : "Bench Press"};
+      case "bench_press":
         return {liftType : "deadlift", liftName : "Deadlift"};
       default:
         return {liftType : "deadlift", liftName : "Deadlift"};
