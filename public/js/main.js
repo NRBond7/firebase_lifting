@@ -19,6 +19,8 @@ function populateUserDropdown() {
   var dropdown = document.getElementById('select_user');
   
   users.on('value', snap => {
+    emptyDropdown(dropdown);
+
     snap.forEach(childSnapshot => {
       var childKey = childSnapshot.key;
       var childData = childSnapshot.val();
@@ -29,7 +31,8 @@ function populateUserDropdown() {
       dropdown.add(dropdownOption, 0);
     })
 
-    dropdown.value = dropdown.options[0].value;
+    dropdown.selectedIndex = 0;
+    populateDayDropdown();
   });
 }
 
@@ -38,12 +41,15 @@ function onUserSelected() {
 }
 
 function populateDayDropdown() {
-  var dateFormat = require('dateformat');
-  var user = firebase.auth().currentUser;
-  var liftLog = firebase.database().ref("/lift_log/" + user.displayName);
+  var username = document.getElementById('select_user').value;
+  var liftLog = firebase.database().ref("/lift_log/" + username);
   var dropdown = document.getElementById('select_day');
 
   liftLog.on('value', snap => {
+    var dateFormat = require('dateformat');
+    
+    emptyDropdown(dropdown);
+
     var lastLift;
     if (snap.numChildren() > 0) {
       snap.forEach(childSnapshot => {
@@ -92,4 +98,8 @@ function generateNextLiftDay(lastLift) {
   } else {
     return {liftType : "deadlift", liftName : "Deadlift"};
   }
+}
+
+function emptyDropdown(dropdown) {
+  dropdown.options.length = 0;
 }
