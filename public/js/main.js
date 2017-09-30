@@ -77,12 +77,11 @@ function populateDayDropdown() {
 }
 
 function onDaySelected(nextLift) {
-  const dropdown = document.getElementById('select_day');
   const title = document.getElementById('lift_day_header');
 
   title.textContent = nextLift.liftName + " Day";
 
-  console.log(dropdown.options[dropdown.selectedIndex].text);
+  populateLiftUI(nextLift);
 }
 
 function generateNextLiftDay(lastLift) {
