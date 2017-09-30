@@ -1,28 +1,28 @@
-[debug] [2017-09-30T16:31:01.696Z] ----------------------------------------------------------------------
-[debug] [2017-09-30T16:31:01.698Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\chaos\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve
-[debug] [2017-09-30T16:31:01.698Z] CLI Version:   3.12.0
-[debug] [2017-09-30T16:31:01.698Z] Platform:      win32
-[debug] [2017-09-30T16:31:01.698Z] Node Version:  v6.11.3
-[debug] [2017-09-30T16:31:01.698Z] Time:          Sat Sep 30 2017 12:31:01 GMT-0400 (Eastern Daylight Time)
-[debug] [2017-09-30T16:31:01.698Z] ----------------------------------------------------------------------
+[debug] [2017-09-30T18:37:37.191Z] ----------------------------------------------------------------------
+[debug] [2017-09-30T18:37:37.193Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\chaos\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve
+[debug] [2017-09-30T18:37:37.193Z] CLI Version:   3.12.0
+[debug] [2017-09-30T18:37:37.193Z] Platform:      win32
+[debug] [2017-09-30T18:37:37.193Z] Node Version:  v6.11.3
+[debug] [2017-09-30T18:37:37.194Z] Time:          Sat Sep 30 2017 14:37:37 GMT-0400 (Eastern Daylight Time)
+[debug] [2017-09-30T18:37:37.194Z] ----------------------------------------------------------------------
 [debug] 
-[debug] [2017-09-30T16:31:01.707Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
-[debug] [2017-09-30T16:31:01.707Z] > authorizing via signed-in user
-[debug] [2017-09-30T16:31:01.709Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/lifting-test-1  
- Sat Sep 30 2017 12:31:01 GMT-0400 (Eastern Daylight Time)
-[debug] [2017-09-30T16:31:02.084Z] <<< HTTP RESPONSE 200
-[debug] [2017-09-30T16:31:02.089Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/lifting-test-1/tokens  
- Sat Sep 30 2017 12:31:02 GMT-0400 (Eastern Daylight Time)
-[debug] [2017-09-30T16:31:02.523Z] <<< HTTP RESPONSE 200
+[debug] [2017-09-30T18:37:37.203Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2017-09-30T18:37:37.203Z] > authorizing via signed-in user
+[debug] [2017-09-30T18:37:37.204Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/lifting-test-1  
+ Sat Sep 30 2017 14:37:37 GMT-0400 (Eastern Daylight Time)
+[debug] [2017-09-30T18:37:37.596Z] <<< HTTP RESPONSE 200
+[debug] [2017-09-30T18:37:37.597Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/lifting-test-1/tokens  
+ Sat Sep 30 2017 14:37:37 GMT-0400 (Eastern Daylight Time)
+[debug] [2017-09-30T18:37:38.329Z] <<< HTTP RESPONSE 200
 [info] 
 [info] === Serving from 'C:\Users\chaos\Desktop\Firebase\firebase_lifting'...
 [info] 
-[debug] [2017-09-30T16:31:02.539Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/lifting-test-1  
- Sat Sep 30 2017 12:31:02 GMT-0400 (Eastern Daylight Time)
-[debug] [2017-09-30T16:31:02.792Z] <<< HTTP RESPONSE 200
-[debug] [2017-09-30T16:31:02.793Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/669558100073/clients/_:getWebAppConfig  
- Sat Sep 30 2017 12:31:02 GMT-0400 (Eastern Daylight Time)
-[debug] [2017-09-30T16:31:03.064Z] <<< HTTP RESPONSE 200
+[debug] [2017-09-30T18:37:38.335Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/lifting-test-1  
+ Sat Sep 30 2017 14:37:38 GMT-0400 (Eastern Daylight Time)
+[debug] [2017-09-30T18:37:38.637Z] <<< HTTP RESPONSE 200
+[debug] [2017-09-30T18:37:38.638Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/669558100073/clients/_:getWebAppConfig  
+ Sat Sep 30 2017 14:37:38 GMT-0400 (Eastern Daylight Time)
+[debug] [2017-09-30T18:37:38.889Z] <<< HTTP RESPONSE 200
 [info] i  hosting: Serving hosting files from: public
 [info] +  hosting: Local server: http://localhost:5000
 

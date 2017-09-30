@@ -47,7 +47,7 @@ function populateDayDropdown() {
 
   liftLog.on('value', snap => {
     var dateFormat = require('dateformat');
-    
+
     emptyDropdown(dropdown);
 
     var lastLift;
@@ -72,12 +72,17 @@ function populateDayDropdown() {
     currentOption.textContent = "Today - " + nextLift.liftName;
     dropdown.add(currentOption, 0);
     dropdown.value = currentOption.value;
+    onDaySelected(nextLift);
   });
 }
 
-function onDaySelected() {
+function onDaySelected(nextLift) {
   const dropdown = document.getElementById('select_day');
-  alert(dropdown.options[dropdown.selectedIndex].text);
+  const title = document.getElementById('lift_day_header');
+
+  title.textContent = nextLift.liftName + " Day";
+
+  console.log(dropdown.options[dropdown.selectedIndex].text);
 }
 
 function generateNextLiftDay(lastLift) {
@@ -102,4 +107,12 @@ function generateNextLiftDay(lastLift) {
 
 function emptyDropdown(dropdown) {
   dropdown.options.length = 0;
+}
+
+function skipWorkout() {
+  console.log("skipWorkout");
+}
+
+function finishWorkout() {
+  console.log("finishWorkout");
 }
