@@ -111,6 +111,11 @@ function loadDataForDay(liftData) {
   localStorage.setItem("liftData", JSON.stringify(liftData));
 
   populateLiftUI(liftData);
+
+  document.getElementById('lift_pr_field').disabled = document.getElementById('select_day').selectedIndex != 0;
+  document.getElementById('lift_pr_field').value = document.getElementById('lift_pr_field').textContent = "";
+  document.getElementById('skip_button').disabled = document.getElementById('select_day').selectedIndex != 0;
+  document.getElementById('finish_button').disabled = document.getElementById('select_day').selectedIndex != 0;
 }
 
 function generateNextLiftDay(lastLift) {
