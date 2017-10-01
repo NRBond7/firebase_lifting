@@ -1,10 +1,11 @@
 function populateLiftUI(nextLift) {
 	var database = firebase.database();
 	var user = {username : document.getElementById('select_user').value, name : document.getElementById('select_user').textContent};
-	var numWorkoutsLogged = document.getElementById('select_day').options.length - 1;
-	var weekNumber = numWorkoutsLogged / 4 + 1;
-	var wave = (weekNumber - 1) / 3 + 1;
-	
+	var index = document.getElementById('select_day').selectedIndex;
+	var workoutNumber = document.getElementById('select_day').options.length - index;
+	var weekNumber = Math.ceil(workoutNumber / 4);
+	var wave = Math.floor((weekNumber - 1) / 3 + 1);
+
 	var weekId;
 	switch(weekNumber) {
 		case 1:
@@ -26,6 +27,16 @@ function populateLiftUI(nextLift) {
 			weekId = "147";
 			break;
 	}
+
+	console.log("workout - " + workoutNumber);
+	console.log("week - " + weekNumber);
+	console.log("wave - " + wave);
+
+	localStorage.removeItem("workoutPattern");
+	localStorage.removeItem("waveData");
+	localStorage.removeItem("maxData");
+	localStorage.removeItem("liftBlockData");
+	localStorage.removeItem("liftBlockTypes");
 
 	const workoutPattern = database.ref("pattern").child(weekId).child(nextLift.liftType);
 	workoutPattern.on('value', snap => {
@@ -87,7 +98,7 @@ function generateWorkout() {
 					if (hasPr) {
 						var liftMax = maxData[liftType];
 						var weightPercentage = waveData[intensity]["set_" + currentSet + "_percentage"];
-						var liftWeight = Math.round(liftMax * weightPercentage);
+						var liftWeight = roundDownCalculation(liftMax * weightPercentage);
 						liftBlock.textContent = liftWeight + " x " + reps + " " + liftName;
 					} else {
 						liftBlock.textContent = reps + " " + liftName;
@@ -98,4 +109,8 @@ function generateWorkout() {
 			}
 		}
 	}
+}
+
+function roundDownCalculation(value) {
+	return 2.5 * Math.floor(value / 2.5);
 }

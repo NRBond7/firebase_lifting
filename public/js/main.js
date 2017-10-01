@@ -50,17 +50,21 @@ function populateDayDropdown() {
 
     var lastLift;
     if (snap.numChildren() > 0) {
+      var workoutCount = 1;
       snap.forEach(childSnapshot => {
         var dropdownOption = document.createElement('option');
         var childKey = childSnapshot.key;
         var liftDate = childSnapshot.child("date").val();
         var liftType = childSnapshot.child("lift_type").val();
         var liftName = childSnapshot.child("lift_name").val();
+        var weekNumber = Math.ceil(workoutCount / 4);
 
         dropdownOption.value = liftType;
-        dropdownOption.textContent = liftDate + " - " + liftName;
+        dropdownOption.textContent = "Week " + weekNumber + " " + liftName + " - " + liftDate;
         dropdown.add(dropdownOption, 0);
         lastLift = liftType;
+
+        workoutCount++;
       });
     }
 
@@ -80,16 +84,16 @@ function onDaySelected() {
 
   switch (liftType) {
     case "deadlift":
-     liftName = "OHP";
+     liftName = "Deadlift";
      break;
     case "overhead_press":
-      liftName = "Back Squat";
+      liftName = "OHP";
       break;
     case "back_squat":
-      liftName = "Bench Press";
+      liftName = "Back Squat";
       break;
     case "bench_press":
-     liftName = "Deadlift";
+     liftName = "Bench Press";
       break;
     default:
       liftName = "Deadlift";
@@ -99,14 +103,14 @@ function onDaySelected() {
   loadDataForDay({liftType : liftType, liftName : liftName})
 }
 
-function loadDataForDay(nextLift) {
+function loadDataForDay(liftData) {
   const title = document.getElementById('lift_day_header');
 
-  title.textContent = nextLift.liftName + " Day";
+  title.textContent = liftData.liftName + " Day";
 
-  localStorage.setItem("liftData", JSON.stringify(nextLift));
+  localStorage.setItem("liftData", JSON.stringify(liftData));
 
-  populateLiftUI(nextLift);
+  populateLiftUI(liftData);
 }
 
 function generateNextLiftDay(lastLift) {
