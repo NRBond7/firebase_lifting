@@ -20,9 +20,7 @@
     <script data-main="js/dateformat.js" src="js/require.js"></script>
 
     <script src="js/main.js"></script>
-
     <script src="js/lift_generation.js"></script>
-
     <link rel="stylesheet" type="text/css" href="style.css">
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -120,19 +118,24 @@
           <!-- Text field for PR input -->
           <form action="#" class="container">
             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-              <input class="mdl-textfield__input" type="text" id="sample3">
-              <label class="mdl-textfield__label" for="sample3">Primary PR</label>
+              <input class="mdl-textfield__input" type="text" id="lift_pr_field">
+              <label class="mdl-textfield__label" for="lift_pr_field">Primary PR</label>
             </div>
           </form>
 
           <div class="container">
-              <button class="mdl-button mdl-js-button mdl-js-ripple-effect" onClick="skipWorkout()">
-                SKIP
-              </button>
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect" onClick="skipWorkout()">
+              SKIP
+            </button>
 
             <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" onClick="finishWorkout()">
               FINISH WORKOUT
             </button>
+          </div>
+
+          <div id="snackbar" class="mdl-js-snackbar mdl-snackbar">
+            <div class="mdl-snackbar__text"></div>
+            <button class="mdl-snackbar__action" type="button"></button>
           </div>
         </div>
       </main>

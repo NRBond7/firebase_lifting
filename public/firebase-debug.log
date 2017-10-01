@@ -1,0 +1,36 @@
+[debug] [2017-10-01T17:37:54.902Z] ----------------------------------------------------------------------
+[debug] [2017-10-01T17:37:54.904Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\chaos\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve
+[debug] [2017-10-01T17:37:54.904Z] CLI Version:   3.12.0
+[debug] [2017-10-01T17:37:54.904Z] Platform:      win32
+[debug] [2017-10-01T17:37:54.904Z] Node Version:  v6.11.3
+[debug] [2017-10-01T17:37:54.904Z] Time:          Sun Oct 01 2017 13:37:54 GMT-0400 (Eastern Daylight Time)
+[debug] [2017-10-01T17:37:54.904Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2017-10-01T17:37:54.918Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2017-10-01T17:37:54.918Z] > authorizing via signed-in user
+[debug] [2017-10-01T17:37:54.919Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2017-10-01T17:37:54.920Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token { refresh_token: '1/C_resQ_K1mTGOxiCCYa2WtXlYXlS8BJq6qrVxT-tFwo',
+  client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
+  client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
+  grant_type: 'refresh_token',
+  scope: 'email https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
+ Sun Oct 01 2017 13:37:54 GMT-0400 (Eastern Daylight Time)
+[debug] [2017-10-01T17:37:55.081Z] <<< HTTP RESPONSE 200
+[debug] [2017-10-01T17:37:55.087Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/lifting-test-1  
+ Sun Oct 01 2017 13:37:55 GMT-0400 (Eastern Daylight Time)
+[debug] [2017-10-01T17:37:55.384Z] <<< HTTP RESPONSE 200
+[debug] [2017-10-01T17:37:55.386Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/lifting-test-1/tokens  
+ Sun Oct 01 2017 13:37:55 GMT-0400 (Eastern Daylight Time)
+[debug] [2017-10-01T17:37:55.740Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'C:\Users\chaos\Desktop\Firebase\firebase_lifting'...
+[info] 
+[debug] [2017-10-01T17:37:55.755Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/lifting-test-1  
+ Sun Oct 01 2017 13:37:55 GMT-0400 (Eastern Daylight Time)
+[debug] [2017-10-01T17:37:56.031Z] <<< HTTP RESPONSE 200
+[debug] [2017-10-01T17:37:56.032Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/669558100073/clients/_:getWebAppConfig  
+ Sun Oct 01 2017 13:37:56 GMT-0400 (Eastern Daylight Time)
+[debug] [2017-10-01T17:37:56.324Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: public
+[info] +  hosting: Local server: http://localhost:5000
+

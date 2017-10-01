@@ -46,8 +46,6 @@ function populateDayDropdown() {
   var dropdown = document.getElementById('select_day');
 
   liftLog.on('value', snap => {
-    var dateFormat = require('dateformat');
-
     emptyDropdown(dropdown);
 
     var lastLift;
@@ -55,7 +53,7 @@ function populateDayDropdown() {
       snap.forEach(childSnapshot => {
         var dropdownOption = document.createElement('option');
         var childKey = childSnapshot.key;
-        var liftDate = dateFormat(childKey, "mm/dd/yyyy");
+        var liftDate = childSnapshot.child("date").val();
         var liftType = childSnapshot.child("lift_type").val();
         var liftName = childSnapshot.child("lift_name").val();
 
@@ -72,14 +70,41 @@ function populateDayDropdown() {
     currentOption.textContent = "Today - " + nextLift.liftName;
     dropdown.add(currentOption, 0);
     dropdown.value = currentOption.value;
-    onDaySelected(nextLift);
+    loadDataForDay(nextLift);
   });
 }
 
-function onDaySelected(nextLift) {
+function onDaySelected() {
+  var liftType = document.getElementById('select_day').value;
+  var liftName;
+
+  switch (liftType) {
+    case "deadlift":
+     liftName = "OHP";
+     break;
+    case "overhead_press":
+      liftName = "Back Squat";
+      break;
+    case "back_squat":
+      liftName = "Bench Press";
+      break;
+    case "bench_press":
+     liftName = "Deadlift";
+      break;
+    default:
+      liftName = "Deadlift";
+      break;
+  }
+
+  loadDataForDay({liftType : liftType, liftName : liftName})
+}
+
+function loadDataForDay(nextLift) {
   const title = document.getElementById('lift_day_header');
 
   title.textContent = nextLift.liftName + " Day";
+
+  localStorage.setItem("liftData", JSON.stringify(nextLift));
 
   populateLiftUI(nextLift);
 }
@@ -109,9 +134,38 @@ function emptyDropdown(dropdown) {
 }
 
 function skipWorkout() {
-  console.log("skipWorkout");
+  uploadWorkout(true);
 }
 
 function finishWorkout() {
-  console.log("finishWorkout");
+  if (document.getElementById('lift_pr_field').value) {
+    uploadWorkout(false);
+  } else {
+    showSnackBar("Enter a PR for today's main lift");
+  }
+}
+
+function uploadWorkout(wasSkipped) {
+  var dateFormat = require('dateformat');
+  var liftData = JSON.parse(localStorage.getItem("liftData"));
+  var username = document.getElementById('select_user').value;
+  var workoutData = {
+    date : dateFormat(new Date(), "mm/dd/yyyy"),
+    lift_type : liftData.liftType,
+    lift_name : liftData.liftName,
+    lift_pr : document.getElementById('lift_pr_field').value,
+    was_skipped : wasSkipped
+  };
+
+  firebase.database().ref('lift_log/' + username).push(workoutData, onUploadCompleted);
+}
+
+function onUploadCompleted() {
+  document.getElementById('lift_pr_field').value = document.getElementById('lift_pr_field').textContent = "";
+  showSnackBar("Workout uploaded");
+}
+
+function showSnackBar(message) {
+  var notification = document.querySelector('.mdl-js-snackbar');
+  notification.MaterialSnackbar.showSnackbar({message: message});
 }

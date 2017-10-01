@@ -29,7 +29,7 @@ function populateLiftUI(nextLift) {
 
 	const workoutPattern = database.ref("pattern").child(weekId).child(nextLift.liftType);
 	workoutPattern.on('value', snap => {
-	localStorage.setItem("workoutPattern", JSON.stringify(snap));
+		localStorage.setItem("workoutPattern", JSON.stringify(snap));
 		generateWorkout();
 	});
 
