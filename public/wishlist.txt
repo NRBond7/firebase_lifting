@@ -1,0 +1,3 @@
+- Links to examples (videos or gifs) of lifts
+- Material design dropdowns
+- Notes
