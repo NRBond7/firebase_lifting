@@ -4,7 +4,7 @@ function initFirebase() {
       authDomain: "powerbuilding531.firebaseapp.com",
       databaseURL: "https://powerbuilding531.firebaseio.com",
       projectId: "powerbuilding531",
-      storageBucket: "",
+      storageBucket: "powerbuilding531.appspot.com",
       messagingSenderId: "197638980452"
     };
     firebase.initializeApp(config);
