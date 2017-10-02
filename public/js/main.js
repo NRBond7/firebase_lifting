@@ -141,3 +141,9 @@ function generateNextLiftDay(lastLift) {
 function emptyDropdown(dropdown) {
   dropdown.options.length = 0;
 }
+
+function onKeyUp(ele) {
+    if(event.keyCode == 13) {
+        finishWorkout();     
+    }
+}
