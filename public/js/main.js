@@ -1,11 +1,11 @@
 function initFirebase() {
     var config = {
-      apiKey: "AIzaSyCaSPFEJM5NHYXJ-jSFOYh9TBsZhzOeOG4",
-      authDomain: "lifting-test-1.firebaseapp.com",
-      databaseURL: "https://lifting-test-1.firebaseio.com",
-      projectId: "lifting-test-1",
-      storageBucket: "lifting-test-1.appspot.com",
-      messagingSenderId: "669558100073"
+      apiKey: "AIzaSyAUNbv3ozWjcpZ1E0yiexI7kRoVEXQ1RYE",
+      authDomain: "powerbuilding531.firebaseapp.com",
+      databaseURL: "https://powerbuilding531.firebaseio.com",
+      projectId: "powerbuilding531",
+      storageBucket: "",
+      messagingSenderId: "197638980452"
     };
     firebase.initializeApp(config);
 }

@@ -1,5 +1,6 @@
 {
   "projects": {
-    "default": "lifting-test-1"
+    "default": "lifting-test-1",
+    "powerbuilding": "powerbuilding531"
   }
 }

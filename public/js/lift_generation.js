@@ -80,9 +80,9 @@ function generateWorkout() {
 		for (var x = 0; x < Object.keys(liftBlockTypes).length; x++) {
 			var currentBlockId = liftBlockTypes[x]["id"];
 			var currentBlockName = liftBlockTypes[x]["name"];
+			var numSets = liftBlockTypes[x]["num_sets"];
 
-			//todo: put # of sets into firebase
-			for (var y = 0; y < 3; y++){
+			for (var y = 0; y < numSets; y++){
 				var currentSet = y + 1;
 				var container = document.getElementById(currentBlockId + "_set_" + currentSet);
 				container.innerHTML = "";
